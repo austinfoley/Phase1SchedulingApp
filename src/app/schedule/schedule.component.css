@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Cedarville Cursive';
+  src: url("/assets/fonts/CedarvilleCursive-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  font-family: 'Cedarville Cursive', sans-serif;
+}
 
 .form-signin {
     width: 100%;
