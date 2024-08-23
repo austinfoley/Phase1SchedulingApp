@@ -1,0 +1,47 @@
+<body class="text-center">
+<main class="form-signin">
+<div class="col bg-light center-v">
+    <div class="border border-secondary px-5 py-4 w-90">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <h1 class="h3 mb-3 fw-normal">Schedule a Meeting</h1>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name:</label>
+              <input type="string" class="form-control" id="firstName" name="firstName" ngModel required minlength="2" #firstName="ngModel">
+              <div *ngIf="firstName.invalid && firstName.touched">
+                <small *ngIf="firstName.errors?.['required']">First Name is required</small>
+                <small *ngIf="firstName.errors?.['firstName']">Please Enter your First Name</small>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="string" class="form-control" id="lastName" name="lastName" ngModel required minlength="2" #lastName="ngModel">
+                <div *ngIf="lastName.invalid && lastName.touched">
+                  <small *ngIf="lastName.errors?.['required']">Last Name is required</small>
+                  <small *ngIf="lastName.errors?.['lastName']">Please Enter your Last Name</small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" ngModel required minlength="3" email #email="ngModel">
+                <div *ngIf="email.invalid && email.touched">
+                  <small *ngIf="email.errors?.['required']">Email is required</small>
+                  <small *ngIf="email.errors?.['email']">Please enter a valid email</small>
+                </div>
+              </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" ngModel required minlength="6" #password="ngModel">
+              <div *ngIf="password.invalid && password.touched">
+                <small *ngIf="password.errors?.['required']">Password is required</small>
+                <small *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long</small>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+</body>
+
