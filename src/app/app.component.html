@@ -1,7 +1,7 @@
 <div>
 
-  <app-login *ngIf="authenticated" (userAuthenticated)="onAuthenticated($event)"/>
-  <app-schedule *ngIf="!authenticated"/>
+  <app-login *ngIf="!authenticated" (userAuthenticated)="onAuthenticated($event)"/>
+  <app-schedule *ngIf="authenticated"/>
 
 </div>
 
